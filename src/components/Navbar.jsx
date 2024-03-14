@@ -5,6 +5,7 @@ import { FaWineGlassAlt } from "react-icons/fa";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Login from "./Login";
+import Signup from "./Signup";
 
 function Navbar() {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -15,6 +16,7 @@ function Navbar() {
   };
 
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isNextModalOpen, setNextModalOpen] = useState(false);
 
   const openModal = () => {
     setModalOpen(true);
@@ -22,6 +24,14 @@ function Navbar() {
 
   const closeModal = () => {
     setModalOpen(false);
+  };
+
+  const openNextModal = () => {
+    setNextModalOpen(true);
+  };
+
+  const closeNextModal = () => {
+    setNextModalOpen(false);
   };
   return (
     <div>
@@ -45,7 +55,8 @@ function Navbar() {
           <div className="flex mt-2 font-light text-lg gap-10">
             <div onClick={()=>openModal()}>Log In</div>
               <Login isOpen={isModalOpen} onClose={closeModal}/>
-            <div>Sign Up</div>
+              <div onClick={()=>openNextModal()}>Sign Up</div>
+              <Signup isOpen={isNextModalOpen} onClose={closeNextModal}/>
           </div>
         </div>
 
