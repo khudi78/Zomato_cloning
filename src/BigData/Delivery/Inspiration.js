@@ -1,0 +1,31 @@
+const inspiration=[
+    {
+        id:'1',
+        "name":"Biryani",
+        "img":"https://www.thespruceeats.com/thmb/XDBL9gA6A6nYWUdsRZ3QwH084rk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-chicken-biryani-recipe-7367850-hero-A-ed211926bb0e4ca1be510695c15ce111.jpg"},
+    {
+        id:'2',
+        "name":"Pizza",
+        "img":"https://www.southernliving.com/thmb/3x3cJaiOvQ8-3YxtMQX0vvh1hQw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/2652401_QFSSL_SupremePizza_00072-d910a935ba7d448e8c7545a963ed7101.jpg"},
+    {
+        id:'3',
+        "name":"Chicken",
+        "img":"https://www.spendwithpennies.com/wp-content/uploads/2020/05/1200-Rotisserie-Chicken-SpendWithPennies-11.jpg"
+    },
+    {
+        id:'4',
+        "name":"Rolls",
+        "img":"https://ministryofcurry.com/wp-content/uploads/2020/05/chicken-kathi-rolls_.jpg",
+    },
+    {
+        id:'5',
+        "name":"Burger",
+        "img":"https://www.foodandwine.com/thmb/pwFie7NRkq4SXMDJU6QKnUKlaoI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Ultimate-Veggie-Burgers-FT-Recipe-0821-5d7532c53a924a7298d2175cf1d4219f.jpg",
+    },
+    {
+        id:'6',
+        "name":"Cake",
+        "img":"https://assets.winni.in/product/primary/2023/4/84499.jpeg?dpr=1&w=500",
+    },
+];
+export default inspiration;
