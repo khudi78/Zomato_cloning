@@ -2,14 +2,21 @@ import React from "react";
 import { GiScooter } from "react-icons/gi";
 import { CiForkAndKnife } from "react-icons/ci";
 import { FaWineGlassAlt } from "react-icons/fa";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { IoSearchOutline } from "react-icons/io5";
+import { IoMdArrowDropdown } from "react-icons/io";
 
-function Navbar() {
+
+function Navbar({select}) {
   const [selectedOption, setSelectedOption] = useState(null);
   
+  useEffect(() => {
+    setSelectedOption(select);
+  }, [select]);
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
@@ -45,10 +52,28 @@ function Navbar() {
               </div>
             </NavLink>
             <div>
-              <input
-                type="text"
-                className="bg-white border border-1 w-[600px] h-[47px] rounded-lg  ml-5 shadow-lg"
-              />
+              
+               <div className="flex border border-1 mt-1  ml-5 shadow-lg mx-[150px] w-[600px] h-[50px] rounded-xl bg-white p-2 py-3">
+              <div className="flex gap-1 w-[200px]">
+                <FaMapMarkerAlt className="mt-[5px] text-red-500" />
+                <h1 className=" text-base text-slate-500">
+                  Mizoram,house,vidya...
+                </h1>
+                <IoMdArrowDropdown className="text-black mt-1 " />
+              </div>
+              <div className="text-slate-500 px-1 ml-2 mt-[-3px]">|</div>
+              <div className="flex">
+                <IoSearchOutline className="text-black mt-[6px] ml-2" />
+                <input
+                  type="search"
+                  className="focus:outline-none text-slate-500 text-base w-[340px] rounded-r-xl mt-[-10px]  h-[46px] bg-white px-3 "
+                  placeholder="Search for restaurant , cuisine , or a dish"
+                  name=""
+                  id=""
+                />
+              </div>
+              <div></div>
+            </div>
             </div>
           </div>
 
@@ -147,7 +172,14 @@ function Navbar() {
         </div>
       </div>
 
-      <div className="h-[1px] bg-gray-200 mb-5  w-[1536px]"></div>
+      {(selectedOption === 2 || selectedOption === 3 || selectedOption === 1) && (
+              <div className="h-[1px] bg-gray-200 mb-[17px]   w-[1536px]"></div>
+            )}
+
+{selectedOption != 2 &&selectedOption != 1 && selectedOption != 3 && (
+              <div className="h-[1px] bg-gray-200 mb-5 mt-3  w-[1536px]"></div>
+            )}
+      
     </div>
   );
 }

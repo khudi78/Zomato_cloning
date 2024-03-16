@@ -7,7 +7,7 @@ import resto from '../BigData/Delivery/Restaurants'
 function Dining() {
   return (
     <div className='mt-[-52px] relative'>
-       <Navbar/>
+       <Navbar select={1}/>
 
        <div className="ml-[200px] w-[1100px] ">
        {/* 1st section */}

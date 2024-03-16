@@ -8,6 +8,7 @@ import { Routes,Route } from 'react-router-dom'
 import Delivery from './pages/Delivery'
 import Dining from './pages/Dining'
 import Nightlife from './pages/Nightlife'
+import Collect from './pages/Collect'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/Order Online" element={<Delivery/>}/>
         <Route path="/Dining" element={<Dining/>}/>
         <Route path="/Nightlife and Clubs" element={<Nightlife/>}/>
+        <Route path="/Collections" element={<Collect/>}/>
         
       </Routes>
       <Footer/>

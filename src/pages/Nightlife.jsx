@@ -6,7 +6,7 @@ import resto from '../BigData/Delivery/Restaurants'
 function Nightlife() {
   return (
     <div className='mt-[-52px]'>
-    <Navbar/>
+    <Navbar select={3}/>
 
     <div className="ml-[200px] w-[1100px] ">
     {/* 1st section */}

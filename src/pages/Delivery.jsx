@@ -8,7 +8,7 @@ import Card from "../components/Card";
 function Delivery() {
   return (
     <div className="mt-[-52px]">
-      <Navbar />
+      <Navbar select={2}/>
 
       <div className="ml-[200px] w-[1100px] ">
         {/* 1st section */}

@@ -22,11 +22,22 @@ function Login({ isOpen, onClose }) {
     setColor(!color);
   };
 
+
+  const [isNextModalOpen, setNextModalOpen] = useState(false);
+ 
+  const openNextModal = () => {
+    setNextModalOpen(true);
+  };
+
+  const closeNextModal = () => {
+    setNextModalOpen(false);
+  };
+
   return (
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overlay"
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overlay text-black"
           onClick={handleOverlayClick}
         >
           <div className="bg-white p-8 py-5 rounded shadow-md z-50 w-[450px] h-[500px]">
@@ -87,12 +98,13 @@ function Login({ isOpen, onClose }) {
               </div>
             </div>
 
-            <div className="h-[1px] bg-slate-400 mb-2 mt-16"></div>
-            <div>
+            <div className="h-[1px] bg-slate-400 mb-2 mt-16 "></div>
+            <div className="text-lg">
               New to Zomato?{" "}
-              <span className=" text-red-600 cursor-pointer ">
+              <span className=" text-red-600 cursor-pointer " onClick={()=>openNextModal()}>
                 Create account
               </span>
+              {/* <Signup isOpen={isNextModalOpen} onClose={closeNextModal}/> */}
             </div>
           </div>
         </div>

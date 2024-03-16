@@ -1,6 +1,7 @@
 import React from "react";
 import collections from "../../BigData/Home/collection";
 import { NavLink } from "react-router-dom";
+import { FaCaretRight } from "react-icons/fa";
 
 function Collection() {
   return (
@@ -12,7 +13,9 @@ function Collection() {
           Agra, based on trends
         </div>
         <NavLink to="/Collections">
-         <div className="text-red-600 cursor-pointer">All collections in Agra</div>
+         <div className="text-red-600 cursor-pointer flex">
+          All collections in Agra
+          <FaCaretRight className="mt-2"/></div>
         </NavLink>
         
       </div>
@@ -23,7 +26,7 @@ function Collection() {
             <img src={item.image.url} alt="" className="rounded-lg brightness-75 h-[310px] w-[263px]"/>
             <div className="absolute top-60 pl-5 text-white">
               <div className="text-lg font-semibold">{item.name}</div>
-              <div>{item.num_places}</div>
+              <div className="flex gap-2">{item.num_places} <FaCaretRight className=" mt-[6px]"/></div>
             </div>
           </div>
         ))}

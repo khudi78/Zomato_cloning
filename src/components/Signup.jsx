@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { MdEmail } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
+import Login from "./Login";
 
 function Signup({ isOpen, onClose }) {
   const handleOverlayClick = (e) => {
@@ -40,11 +41,23 @@ function Signup({ isOpen, onClose }) {
     setInput(!input);
   };
 
+  const [isModalOpen, setModalOpen] = useState(false);
+  
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+ 
+
   return (
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overlay"
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overlay text-black"
           onClick={handleOverlayClick}
         >
           <div className="bg-white p-8 py-5 rounded shadow-md z-50 w-[450px] h-[500px]">
@@ -137,9 +150,11 @@ function Signup({ isOpen, onClose }) {
 
             <div className="h-[1px] "></div>
             <div className="h-[1px] bg-slate-400 mb-2 mt-6"></div>
-            <div>
+            <div className="text-lg">
               Already have an account?{" "}
-              <span className=" text-red-600 cursor-pointer ">Log in</span>
+              <span className=" text-red-600 cursor-pointer " onClick={() => openModal()}>Log in</span>
+              <Login isOpen={isModalOpen} onClose={closeModal}/>
+              
             </div>
           </div>
         </div>
