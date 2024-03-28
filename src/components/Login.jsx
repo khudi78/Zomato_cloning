@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { MdEmail } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
-
+import { NavLink } from "react-router-dom";
 function Login({ isOpen, onClose }) {
   const handleOverlayClick = (e) => {
     // Close the modal only if the overlay is clicked (not the modal content)
@@ -101,9 +101,12 @@ function Login({ isOpen, onClose }) {
             <div className="h-[1px] bg-slate-400 mb-2 mt-16 "></div>
             <div className="text-lg">
               New to Zomato?{" "}
+              
               <span className=" text-red-600 cursor-pointer " onClick={()=>openNextModal()}>
                 Create account
               </span>
+              
+             
               {/* <Signup isOpen={isNextModalOpen} onClose={closeNextModal}/> */}
             </div>
           </div>

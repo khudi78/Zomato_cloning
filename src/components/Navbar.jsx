@@ -77,10 +77,10 @@ function Navbar({select}) {
             </div>
           </div>
 
-          <div className="flex mt-2 font-light text-lg gap-10">
-            <div onClick={()=>openModal()}>Log In</div>
+          <div className="flex mt-2 font-light text-lg gap-10 text-slate-600 ">
+            <div onClick={()=>openModal()} className="cursor-pointer hover:text-slate-950">Log In</div>
               <Login isOpen={isModalOpen} onClose={closeModal}/>
-              <div onClick={()=>openNextModal()}>Sign Up</div>
+              <div onClick={()=>openNextModal()} className="cursor-pointer hover:text-slate-950">Sign Up</div>
               <Signup isOpen={isNextModalOpen} onClose={closeNextModal}/>
           </div>
         </div>
