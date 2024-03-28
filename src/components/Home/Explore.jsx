@@ -35,7 +35,7 @@ function Explore() {
             </div>
             
             { multiple.indexOf(item.id) !== -1 && (
-            <div className="text-slate-500 mt-6 text-lg">{item.description}</div>)
+            <div className="text-slate-500 mt-6 text-lg" dangerouslySetInnerHTML={{ __html: item.description }}></div>)
              }
 
           </div>

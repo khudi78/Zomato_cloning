@@ -95,13 +95,13 @@ function Navbar({select}) {
 
           <NavLink to="/Dining">
           <div onClick={() => handleOptionClick(1)}>
-            <div className="flex text-center gap-2 cursor-pointer ">
+            <div className="flex text-center gap-2 cursor-pointer hover:text-black">
               <div
                 className={`border-2  text-2xl p-2 rounded-full ${
                   selectedOption === 1 ? "bg-yellow-400" : "bg-gray-200"
                 }`}
               >
-                <CiForkAndKnife />
+                <CiForkAndKnife className="hover:text-black"/>
               </div>
               <div
                 className={`mt-1 font-semibold  ${
@@ -120,13 +120,13 @@ function Navbar({select}) {
           
         <NavLink to="/Order Online">
         <div onClick={() => handleOptionClick(2)}>
-            <div className="flex text-center gap-2 cursor-pointer ">
+            <div className="flex text-center gap-2 cursor-pointer hover:text-black">
               <div
                 className={`border-2  text-2xl p-2 rounded-full ${
                   selectedOption === 2 ? "bg-yellow-400" : "bg-gray-200"
                 }`}
               >
-                <GiScooter />
+                <GiScooter className="hover:text-black"/>
               </div>
               <div
                 className={`mt-1 font-semibold  ${
@@ -146,13 +146,13 @@ function Navbar({select}) {
     
         <NavLink to="/Nightlife and Clubs">
         <div onClick={() => handleOptionClick(3)}>
-            <div className="flex text-center gap-2 cursor-pointer ">
+            <div className="flex text-center gap-2 cursor-pointer hover:text-black">
               <div
                 className={`border-2  text-2xl p-2 rounded-full ${
                   selectedOption === 3 ? "bg-yellow-400" : "bg-gray-200"
                 }`}
               >
-                <FaWineGlassAlt />
+                <FaWineGlassAlt className="hover:text-black"/>
               </div>
               <div
                 className={`mt-1 font-semibold  ${

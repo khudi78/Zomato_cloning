@@ -27,7 +27,7 @@ function Dining() {
           <div className="flex justify-between flex-wrap gap-y-10  ">
             {resto.map((data) => (
               <div>
-                <Card key={data.id} {...data} />
+                <Card key={data.id} {...data} option={1}/>
               </div>
             ))}
           </div>

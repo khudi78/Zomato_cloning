@@ -48,7 +48,7 @@ function Home() {
           <div className="flex justify-between">
             <div>Get the App</div>
 
-            <div className="flex gap-10 text-white">
+            <div className="flex gap-10 text-white cursor-pointer">
               <div>Investor Relations</div>
               <div>Add Restaurant</div>
               <div onClick={() => openModal()}>Log In</div>
