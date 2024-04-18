@@ -4,11 +4,31 @@ import inspiration from "../BigData/Delivery/Inspiration";
 import brand from "../BigData/Delivery/Brand";
 import resto from "../BigData/Delivery/Restaurants";
 import Card from "../components/Card";
+import { Link,useLocation } from "react-router-dom";
+import Resto from "./Resto";
+//import { useHistory } from "react-router-dom";
 
 function Delivery() {
+   const location=useLocation();
+  console.log("Location object before navigating:",location);
+  //const history = useHistory();
+
+  // const handleClick = (data) => {
+  //   history.push({
+  //     pathname: "/Restaurant",
+  //     state: { restaurantData: data }
+  //   });
+  // };
+
+  const Handle=(data)=>{
+      location.state=data;
+      console.log("Location object :",location);
+  }
+
+  
   return (
     <div className="mt-[-52px]">
-      <Navbar select={2}/>
+      <Navbar select={2} />
 
       <div className="ml-[200px] w-[1100px] ">
         {/* 1st section */}
@@ -59,10 +79,17 @@ function Delivery() {
         {/* 3rd div */}
         <div className="mt-16 text-3xl">
           <h1 className="mb-10">Order food online in Vidya Nagar Colony</h1>
-          <div className="flex justify-between flex-wrap gap-y-10  ">
+
+          <div className="flex justify-between flex-wrap gap-y-10">
             {resto.map((data) => (
-              <div>
-                <Card key={data.id} {...data} option={2}/>
+              <div key={data.id} onClick={Handle(data)}>
+                {/* Logging data to console */}
+                {console.log("dataaaaaaaa ", data)}
+
+             
+                  {/* Rendering Card component */}
+                  <Card key={data.id} {...data} option={2}/>
+               
               </div>
             ))}
           </div>

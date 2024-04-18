@@ -1,12 +1,19 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import Resto from "../pages/Resto";
+//import { useHistory } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 function Card({ option, ...data }) {
   const truncatedText = data.info.name.slice(0, 24);
-  console.log("option",option);
+  console.log("id",data.id)
+
   return (
-    <div className="w-[350px] border-2 border-white hover:border-slate-200 hover:rounded-2xl hover:shadow-lg">
-      <div className="p-2 ">
+    <div className="w-[350px] border-2 border-white hover:border-slate-200 hover:rounded-2xl hover:shadow-lg" >
+        {/* <NavLink
+                 to={`/Restaurant?name=${data.name}&id=${data.id}`}
+                >   */}
+      <div className="p-2 hover:text-black" >
         <div>
           <img
             src={data.info.image.url}
@@ -16,7 +23,7 @@ function Card({ option, ...data }) {
         </div>
 
         <div className="flex justify-between text-xl ">
-          <div>{truncatedText}...</div>
+          <div className="  ">{truncatedText}...</div>
           <div className=" flex text-sm gap-1 bg-lime-700 text-white rounded-md w-13 h-6 px-1">
             {data.info.rating.rating_text}
             <FaStar className="mt-1" />
@@ -51,6 +58,7 @@ function Card({ option, ...data }) {
 
         {/* <div className="h-[1px] bg-slate-300 mt-2"></div> */}
       </div>
+      {/* </NavLink>   */}
     </div>
   );
 }

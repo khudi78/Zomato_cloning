@@ -9,20 +9,26 @@ import Delivery from './pages/Delivery'
 import Dining from './pages/Dining'
 import Nightlife from './pages/Nightlife'
 import Collect from './pages/Collect'
+import Resto from './pages/Resto'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-function App() {
-
+function App(props) {
+  const { location } = props;
 
   return (
     <div className='text-black'>
+    
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/Order Online" element={<Delivery/>}/>
         <Route path="/Dining" element={<Dining/>}/>
         <Route path="/Nightlife and Clubs" element={<Nightlife/>}/>
         <Route path="/Collections" element={<Collect/>}/>
+        <Route path="/Restaurant"  element={<Resto/>}/>
         
       </Routes>
+    
+      
       <Footer/>
     </div>
   )
