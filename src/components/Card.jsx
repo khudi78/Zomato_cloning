@@ -10,9 +10,9 @@ function Card({ option, ...data }) {
 
   return (
     <div className="w-[350px] border-2 border-white hover:border-slate-200 hover:rounded-2xl hover:shadow-lg" >
-        {/* <NavLink
+        <NavLink
                  to={`/Restaurant?name=${data.name}&id=${data.id}`}
-                >   */}
+                >  
       <div className="p-2 hover:text-black" >
         <div>
           <img
@@ -56,9 +56,9 @@ function Card({ option, ...data }) {
         
         </div>
 
-        {/* <div className="h-[1px] bg-slate-300 mt-2"></div> */}
+        <div className="h-[1px] bg-slate-300 mt-2"></div>
       </div>
-      {/* </NavLink>   */}
+      </NavLink>  
     </div>
   );
 }
