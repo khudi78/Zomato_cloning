@@ -3,12 +3,15 @@ import { RxCross2 } from "react-icons/rx";
 import { MdEmail } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import axios from 'axios';
+import { useAuth } from '../AuthContext'; // Import the custom hook
 
 function Login({ isOpen, onClose }) {
   const [inputValue, setInputValue] = useState(""); // Email
   const [otpValue, setOtpValue] = useState(""); // OTP
   const [isOtpSent, setIsOtpSent] = useState(false); // OTP sent state
   const [buttonText, setButtonText] = useState("Send OTP"); // Button text
+
+  const { login } = useAuth(); // Destructure the login function from context
 
   const handleOverlayClick = (e) => {
     if (e.target.classList.contains("overlay")) {
@@ -40,6 +43,7 @@ function Login({ isOpen, onClose }) {
     try {
       const res = await axios.post('http://localhost:8000/api/auth/verify-otp', { email: inputValue, otp: otpValue });
       alert('Login successful');
+      login({ email: inputValue }); // Pass user data to the context
       onClose(); // Close modal on successful login
     } catch (err) {
       console.error('Error verifying OTP:', err);

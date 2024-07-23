@@ -9,11 +9,14 @@ import Signup from "./Signup";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
+import {useAuth} from '../AuthContext'
+import RightNavbar from "./RightNavbar";
 
 
 function Navbar({select}) {
   const [selectedOption, setSelectedOption] = useState(null);
-  
+  const { user, logout } = useAuth();
+
   useEffect(() => {
     setSelectedOption(select);
   }, [select]);
@@ -77,12 +80,7 @@ function Navbar({select}) {
             </div>
           </div>
 
-          <div className="flex mt-2 font-light text-lg gap-10 text-slate-600 ">
-            <div onClick={()=>openModal()} className="cursor-pointer hover:text-slate-950">Log In</div>
-              <Login isOpen={isModalOpen} onClose={closeModal}/>
-              <div onClick={()=>openNextModal()} className="cursor-pointer hover:text-slate-950">Sign Up</div>
-              <Signup isOpen={isNextModalOpen} onClose={closeNextModal}/>
-          </div>
+            <RightNavbar/>
         </div>
 
         {/* 2nd section */}

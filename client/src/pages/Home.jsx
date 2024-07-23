@@ -6,30 +6,14 @@ import TypeCard from "../components/Home/TypeCard";
 import Collection from "../components/Home/Collection";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
-import Login from "../components/Login";
-import Signup from "../components/Signup";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
+// import {useAuth} from '../AuthContext'
+import RightNavbar from "../components/RightNavbar";
+
 
 function Home() {
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [isNextModalOpen, setNextModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-  const openNextModal = () => {
-    setNextModalOpen(true);
-  };
-
-  const closeNextModal = () => {
-    setNextModalOpen(false);
-  };
+  
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -51,10 +35,8 @@ function Home() {
             <div className="flex gap-10 text-white cursor-pointer">
               <div>Investor Relations</div>
               <div>Add Restaurant</div>
-              <div onClick={() => openModal()}>Log In</div>
-              <Login isOpen={isModalOpen} onClose={closeModal} />
-              <div onClick={() => openNextModal()}>Sign Up</div>
-              <Signup isOpen={isNextModalOpen} onClose={closeNextModal} />
+             
+              <div><RightNavbar></RightNavbar> </div>
             </div>
           </div>
 
