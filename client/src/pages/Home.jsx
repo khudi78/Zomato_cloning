@@ -36,7 +36,7 @@ function Home() {
               <div>Investor Relations</div>
               <div>Add Restaurant</div>
              
-              <div><RightNavbar></RightNavbar> </div>
+              <div  className='mt-[-10px] text-white'><RightNavbar/></div>
             </div>
           </div>
 
@@ -45,9 +45,9 @@ function Home() {
               <h1>zomato</h1>
             </div>
             <div className="text-4xl mt-3 ">
-              <p>Discover the best food & drinks in Agra</p>
+              <p>Discover the best food & drinks in Kochi</p>
             </div>
-            <div className="flex mt-10 mx-[150px] w-[800px] h-[50px] rounded-xl bg-white p-2 py-3">
+            {/* <div className="flex mt-10 mx-[150px] w-[800px] h-[50px] rounded-xl bg-white p-2 py-3">
               <div className="flex gap-1 w-[200px]">
                 <FaMapMarkerAlt className="mt-1 text-red-500" />
                 <h1 className=" text-base text-slate-500">
@@ -67,7 +67,7 @@ function Home() {
                 />
               </div>
               <div></div>
-            </div>
+            </div> */}
           </div>
         </div>
 

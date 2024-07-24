@@ -56,7 +56,7 @@ function Navbar({select}) {
             </NavLink>
             <div>
               
-               <div className="flex border border-1 mt-1  ml-5 shadow-lg mx-[150px] w-[600px] h-[50px] rounded-xl bg-white p-2 py-3">
+               {/* <div className="flex border border-1 mt-1  ml-5 shadow-lg mx-[150px] w-[600px] h-[50px] rounded-xl bg-white p-2 py-3">
               <div className="flex gap-1 w-[200px]">
                 <FaMapMarkerAlt className="mt-[5px] text-red-500" />
                 <h1 className=" text-base text-slate-500">
@@ -76,16 +76,16 @@ function Navbar({select}) {
                 />
               </div>
               <div></div>
-            </div>
+            </div> */}
             </div>
           </div>
 
-            <RightNavbar/>
+            <div className="text-gray-500"><RightNavbar className="text-gray-500"/></div>
         </div>
 
         {/* 2nd section */}
         <div className=" font-thin text-sm mb-5 ">
-          Home / India / Kochi / Kalamassery / Biryani Restaurants
+          Home / India / Kochi 
         </div>
 
         {/* 3rd section */}
@@ -142,7 +142,7 @@ function Navbar({select}) {
         </NavLink>
           
     
-        <NavLink to="/Nightlife and Clubs">
+        {/* <NavLink to="/Nightlife and Clubs">
         <div onClick={() => handleOptionClick(3)}>
             <div className="flex text-center gap-2 cursor-pointer hover:text-black">
               <div
@@ -165,7 +165,7 @@ function Navbar({select}) {
               <div className="bg-red-500 h-[2px] mt-4 w-[]"></div>
             )}
           </div>
-        </NavLink>
+        </NavLink> */}
           
         </div>
       </div>

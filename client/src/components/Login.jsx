@@ -42,6 +42,7 @@ function Login({ isOpen, onClose }) {
   const handleVerifyOtp = async () => {
     try {
       const res = await axios.post('http://localhost:8000/api/auth/verify-otp', { email: inputValue, otp: otpValue });
+      console.log('Response:', res.data);
       alert('Login successful');
       login({ email: inputValue }); // Pass user data to the context
       onClose(); // Close modal on successful login

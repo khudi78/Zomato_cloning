@@ -15,14 +15,14 @@ const items = [
     subtitle: "View the city's favourite dining venues",
     categoryType: "dineout",
   },
-  {
-    id: "3",
-    title: "Nightlife and Clubs",
-    img: "https://b.zmtcdn.com/webFrontend/d9d80ef91cb552e3fdfadb3d4f4379761647365057.jpeg",
-    url: "https://www.zomato.com/agra/drinks-and-nightlife",
-    subtitle: "Explore the city\u2019s top nightlife outlets",
-    categoryType: "nightlife",
-  },
+  // {
+  //   id: "3",
+  //   title: "Nightlife and Clubs",
+  //   img: "https://b.zmtcdn.com/webFrontend/d9d80ef91cb552e3fdfadb3d4f4379761647365057.jpeg",
+  //   url: "https://www.zomato.com/agra/drinks-and-nightlife",
+  //   subtitle: "Explore the city\u2019s top nightlife outlets",
+  //   categoryType: "nightlife",
+  // },
 ];
 
 export default items;

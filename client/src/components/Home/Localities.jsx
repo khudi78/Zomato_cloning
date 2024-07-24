@@ -16,7 +16,7 @@ function Localities() {
   return (
     <div className="text-black mb-20">
       <h1 className="text-4xl mb-8 font-semibold">
-        Popular loacalities in and around <span>Agra</span>
+        Popular loacalities in and around <span>Kochi</span>
       </h1>
       <div className="flex flex-wrap gap-x-10 gap-y-7 ">
         {

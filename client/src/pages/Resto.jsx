@@ -10,8 +10,9 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import resto from "../BigData/Delivery/Restaurants";
-import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { FaStar, FaStarHalfAlt, FaRegStar,FaPlus, FaMinus } from "react-icons/fa";
 import { LiaRupeeSignSolid } from "react-icons/lia";
+import RightNavbar from "../components/RightNavbar";
 
 // Star component to represent full, half, or empty stars
 const Star = ({ type }) => {
@@ -60,7 +61,7 @@ const ItemWithRating = ({ itemRating }) => {
   );
 };
 
-function Resto() {
+function Resto({ updateCart,MainMenu }) {
   // const location = useLocation();
   // const restaurantData = location.state;
 
@@ -74,7 +75,7 @@ function Resto() {
   const params = new URLSearchParams(location.search);
   const id = params.get("id");
   console.log("Location:", location);
-
+  console.log("ideee ",id);
   const element = resto.find((object) => object.id === id);
   console.log("element : ", element);
 
@@ -102,6 +103,36 @@ function Resto() {
       setSelectedHeading(heading);
     };
   };
+  const [items, setItems] = useState({});
+
+  const handleIncrease = (item) => {
+    setItems((prevItems) => ({
+
+      ...prevItems,
+      [item.id]: (prevItems[item.id] || 0) + 1,
+      
+    }));
+    
+  };
+
+  const handleDecrease = (item) => {
+    setItems((prevItems) => ({
+      ...prevItems,
+      [item.id]: Math.max((prevItems[item.id] || 1) - 1, 0),
+      
+    }));
+  };
+
+  console.log("items id ",items);
+
+  useEffect(() => {
+    updateCart(items);
+    // MainMenu(element);
+  }, [items, updateCart]);
+
+  // useEffect(() => {
+  //   MainMenu(element);
+  // }, [element]);
   return (
     <div className="mt-[-76px]">
       {/* 1st section */}
@@ -115,7 +146,7 @@ function Resto() {
               </div>
             </NavLink>
             <div>
-              <div className="flex border border-1 mt-1  ml-5 shadow-lg mx-[150px] w-[600px] h-[50px] rounded-xl bg-white p-2 py-3">
+              {/* <div className="flex border border-1 mt-1  ml-5 shadow-lg mx-[150px] w-[600px] h-[50px] rounded-xl bg-white p-2 py-3">
                 <div className="flex gap-1 w-[200px]">
                   <FaMapMarkerAlt className="mt-[5px] text-red-500" />
                   <h1 className=" text-base text-slate-500">
@@ -135,31 +166,18 @@ function Resto() {
                   />
                 </div>
                 <div></div>
-              </div>
+              </div> */}
             </div>
           </div>
 
-          <div className="flex mt-2 font-light text-lg gap-10 text-slate-600 ">
-            <div
-              onClick={() => openModal()}
-              className="cursor-pointer hover:text-slate-950"
-            >
-              Log In
-            </div>
-            <Login isOpen={isModalOpen} onClose={closeModal} />
-            <div
-              onClick={() => openNextModal()}
-              className="cursor-pointer hover:text-slate-950"
-            >
-              Sign Up
-            </div>
-            <Signup isOpen={isNextModalOpen} onClose={closeNextModal} />
+          <div className="text-gray-500 ">
+            <RightNavbar/>
           </div>
         </div>
 
         {/* 2nd section */}
         <div className=" font-thin text-sm mb-[5px] ">
-          Home / India / Kochi / Kalamassery / Biryani Restaurants
+          Home / India / Kochi 
         </div>
       </div>
 
@@ -246,50 +264,55 @@ function Resto() {
           <div className="w-[1px]  bg-gray-300"></div>
           <div className="text-2xl mt-2 ml-5 ">
             
-            <div className="mb-6">Order Online</div>
-            {element.menus.map((data) => (
-              <div >
-                <div className="mb-4">{data.menu.name}</div>
-                <div className="">
+          <div className="mb-6">Order Online</div>
+      {element.menus.map((data) => (
+        <div key={data.menu.name}>
+          <div className="mb-4">{data.menu.name}</div>
+          <div>
+            <div>
+              {data.menu.items.map((it) => (
+                <div className="flex gap-5 mb-8" key={it.item.id}>
                   <div>
-                    <div>
-                      {data.menu.items.map((it) => (
-                        <div className="flex gap-5 mb-8">
-                          <div>
-                            <img src={it.item.item_image_thumb_url} alt="" className="h-[140px] rounded-xl"/>
-                          </div>
-                          <div className=" text-base font-light pt-3 text-gray-500">
-                          <div className=" text-xl font-normal text-black">{it.item.name}</div>
-                          <div className="flex gap-3">
-                             <div className="flex ">
-                            <ItemWithRating
-                              itemName="Sample Item"
-                              itemRating={it.item.rating.value}
-                              
-                            />
-                             </div>
-
-                             <div>
-                              {it.item.rating.total_rating_text}
-                             </div>
-                          </div>
-                         
-                          <div className="flex text-gray-500">
-                          <LiaRupeeSignSolid  className="text-base mt-[6px]"/>
-                           <div>{it.item.price}</div> </div>
-                          <div>{it.item.desc.slice(0, 60)}...</div>
-                          </div>
-                          
-                          
-                        </div>
-                      ))}
+                    <img
+                      src={it.item.item_image_thumb_url}
+                      alt=""
+                      className="h-[140px] rounded-xl"
+                    />
+                  </div>
+                  <div className="text-base font-light pt-3 text-gray-500">
+                    <div className="text-xl font-normal text-black">
+                      {it.item.name}
                     </div>
+                    <div className="flex gap-3">
+                      <div className="flex">
+                        <ItemWithRating itemName="Sample Item" itemRating={it.item.rating.value} />
+                      </div>
+                      <div>{it.item.rating.total_rating_text}</div>
+                    </div>
+                    <div className="flex text-gray-500">
+                      <LiaRupeeSignSolid className="text-base mt-[6px]" />
+                      <div>{it.item.price}</div>
+                    </div>
+                    <div>{it.item.desc.slice(0, 60)}...</div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <button onClick={() => handleDecrease(it.item)}>
+                      <FaMinus />
+                    </button>
+                    <div>{items[it.item.id] || 0}</div>
+                    <button onClick={() => handleIncrease(it.item)}>
+                      <FaPlus />
+                    </button>
                   </div>
                 </div>
-                <div className="w-[750px] h-[1px] bg-slate-300"></div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+          <div className="w-[750px] h-[1px] bg-slate-300"></div>
+        </div>
+      ))}
+          </div>
+        
         </div>
       </div>
     </div>

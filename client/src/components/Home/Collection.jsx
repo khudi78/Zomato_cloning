@@ -10,11 +10,11 @@ function Collection() {
       <div className="flex justify-between mb-8 text-lg font-light" >
         <div >
           Explore curated lists of top restaurants, cafes, pubs, and bars in
-          Agra, based on trends
+          Kochi, based on trends
         </div>
         <NavLink to="/Collections">
          <div className="text-red-600 cursor-pointer flex">
-          All collections in Agra
+          All collections in Kochi
           <FaCaretRight className="mt-2"/></div>
         </NavLink>
         

@@ -27,7 +27,7 @@ function Delivery() {
 
   
   return (
-    <div className="mt-[-52px]">
+    <div className="mt-[-75px]">
       <Navbar select={2} />
 
       <div className="ml-[200px] w-[1100px] ">

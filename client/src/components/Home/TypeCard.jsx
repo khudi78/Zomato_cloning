@@ -14,9 +14,9 @@ function TypeCard() {
             <img
               src={item.img}
               alt=""
-              className="h-[220px] w-[340px] rounded-xl border border-neutral-300"
+              className="h-[220px] w-[480px] rounded-xl border border-neutral-300"
             />
-            <div className="absolute top-36 bg-white w-[340px] h-[78px] rounded-b-xl border border-l-1 border-r-1 border-b-1 border-neutral-300 pl-6 pt-2">
+            <div className="absolute top-36 bg-white w-[480px] h-[78px] rounded-b-xl border border-l-1 border-r-1 border-b-1 border-neutral-300 pl-6 pt-2">
               <div className="text-lg font-semibold text-black ">
                 {item.title}
               </div>
